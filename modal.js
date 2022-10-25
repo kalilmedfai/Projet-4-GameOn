@@ -11,12 +11,12 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-// ajout
+// ajout --------------------
 const btnClose = document.querySelector(".close");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-// ajout
+// ajout --------------------
 btnClose.addEventListener("click", function(){
   document.querySelector(".bground").style.display = "none";
 })
@@ -26,43 +26,52 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+//test -------------------------------------------
+
+const myForm = document.getElementById('form');
 
 
-
-/* test
-
-const form = document.getElementById('form');
-const first = document.getElementById('first');
-const last = document.getElementById('last');
-const email = document.getElementById('email');
-const birthdate = document.getElementById('birthdate');
-const quantity = document.getElementById('quantity');
-
-form.addEventListener('submit', (e) => {
+myForm.addEventListener('submit', function(e) {
   e.preventDefault();
+  const myFirst = document.getElementById('first');
+  const myLast = document.getElementById('last');
+  const myEmail = document.getElementById('email');
+  const myBirthdate = document.getElementById('birthdate');
+  const myQuantity = document.getElementById('quantity');
+  const myError = document.getElementById('error');
+  const myError2 = document.getElementById('error2');
+  const myError3 = document.getElementById('error3');
+  const myError4 = document.getElementById('error4');
+  const myError5 = document.getElementById('error5');
 
-  checkInputs();
-});
-
-function checkInputs() {
-  // get values from the input
-  const firstValue = first.value.trim();
-  const lastValue = last.value.trim();
-  const emailValue = email.value.trim();
-  const birthdateValue = birthdate.value.trim();
-  const quantityValue = quantity.value.trim();
-
-  if(firstValue === '') {
-    //afficher erreur
-    //ajouter class erreur
-    setErrorFor(first, 'Le prénom ne peut pas être vide');
+  if (myFirst.value.trim() === "") {
+    myError.textContent = "Veuillez renseigner votre prénom";
   } else {
-    //ajouter class success
-    setSuccessFor(first);
+    myError.textContent = "";
   }
-}
 
-function setErrorFor(input, message) {
-  const formData = input.parent
-}
-*/
+  if (myLast.value.trim() === "") {
+    myError2.textContent = "Veuillez renseigner votre nom";
+  } else {
+    myError2.textContent = "";
+  }
+
+  if (myEmail.value.trim() === "") {
+    myError3.textContent = "Veuillez renseigner votre mail";
+  } else {
+    myError3.textContent = "";
+  }
+
+  if (myBirthdate.value.trim() === "") {
+    myError4.textContent = "Veuillez renseigner votre date de naissance";
+  } else {
+    myError4.textContent = "";
+  }
+
+  if (myQuantity.value.trim() === "") {
+    myError5.textContent = "Veuillez renseigner le nombre de tournois auxquels vous avez participé";
+  } else {
+    myError5.textContent = "";
+  }
+
+});
