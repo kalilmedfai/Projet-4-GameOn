@@ -7,6 +7,36 @@ function editNav() {
   }
 }
 
+function check() {
+  const myLocation1 = document.getElementById('location1');  
+  const myLocation2 = document.getElementById('location2');  
+  const myLocation3 = document.getElementById('location3');
+  const myLocation4 = document.getElementById('location4');
+  const myLocation5 = document.getElementById('location5');
+  const myLocation6 = document.getElementById('location6');
+
+  if ( myLocation1.checked === false && myLocation2.checked === false && myLocation3.checked === false && myLocation4.checked === false && myLocation5.checked === false && myLocation6.checked === false ) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function condition() {
+  const myCheckbox1 = document.getElementById("checkbox1");
+
+  if ( myCheckbox1.checked === false ) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// launch modal form
+function launchModal() {
+  modalbg.style.display = "block";
+}
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -20,11 +50,6 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 btnClose.addEventListener("click", function(){
   document.querySelector(".bground").style.display = "none";
 })
-
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
 
 //test -------------------------------------------
 
@@ -43,6 +68,8 @@ myForm.addEventListener('submit', function(e) {
   const myError3 = document.getElementById('error3');
   const myError4 = document.getElementById('error4');
   const myError5 = document.getElementById('error5');
+  const myError6 = document.getElementById('error6');
+  const myError7 = document.getElementById('error7');
 
   if (myFirst.value.trim() === "") {
     myError.textContent = "Veuillez renseigner votre prénom";
@@ -72,6 +99,18 @@ myForm.addEventListener('submit', function(e) {
     myError5.textContent = "Veuillez renseigner le nombre de tournois auxquels vous avez participé";
   } else {
     myError5.textContent = "";
+  }
+
+  if ( check() === false ) {
+    myError6.textContent = "Veuillez sélectionner une radio";
+  } else {
+    myError6.textContent = "";
+  }
+
+  if ( condition() === false ) {
+    myError7.textContent = "Veuillez accepter les conditions d'utilisation";
+  } else {
+    myError7.textContent = "";
   }
 
 });
