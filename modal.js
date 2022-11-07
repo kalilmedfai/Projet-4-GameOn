@@ -72,45 +72,65 @@ myForm.addEventListener('submit', function(e) {
   const myError7 = document.getElementById('error7');
 
   if (myFirst.value.trim() === "") {
-    myError.textContent = "Veuillez renseigner votre prénom";
+    myError.textContent = "Veuillez renseigner votre prénom"
+    myError.style.color = "#FF0000"
+    myFirst.style.border = "2px solid #FF0000"
   } else {
-    myError.textContent = "";
+    myError.textContent = ""
+    myFirst.style.border = ""
   }
 
   if (myLast.value.trim() === "") {
-    myError2.textContent = "Veuillez renseigner votre nom";
+    myError2.textContent = "Veuillez renseigner votre nom"
+    myError2.style.color = "#FF0000"
+    myLast.style.border = "2px solid #FF0000"
   } else {
-    myError2.textContent = "";
+    myError2.textContent = ""
+    myLast.style.border = ""
   }
 
   if (myEmail.value.trim() === "") {
-    myError3.textContent = "Veuillez renseigner votre mail";
+    myError3.textContent = "Veuillez renseigner votre mail"
+    myError3.style.color = "#FF0000"
+    myEmail.style.border = "2px solid #FF0000"
   } else {
     myError3.textContent = "";
+    myEmail.style.border = ""
   }
 
   if (myBirthdate.value.trim() === "") {
-    myError4.textContent = "Veuillez renseigner votre date de naissance";
+    myError4.textContent = "Veuillez renseigner votre date de naissance"
+    myError4.style.color = "#FF0000"
+    myBirthdate.style.border = "2px solid #FF0000"
   } else {
     myError4.textContent = "";
+    myBirthdate.style.border = ""
   }
 
   if (myQuantity.value.trim() === "") {
-    myError5.textContent = "Veuillez renseigner le nombre de tournois auxquels vous avez participé";
+    myError5.textContent = "Veuillez renseigner le nombre de tournois auxquels vous avez participé"
+    myError5.style.color = "#FF0000"
+    myQuantity.style.border = "2px solid #FF0000"
   } else {
-    myError5.textContent = "";
+    myError5.textContent = ""
+    myQuantity.style.border = ""
   }
 
   if ( check() === false ) {
     myError6.textContent = "Veuillez sélectionner une radio";
+    myError6.style.color = "#FF0000"
+    
   } else {
     myError6.textContent = "";
+    myError6.style.color = ""
   }
 
   if ( condition() === false ) {
     myError7.textContent = "Veuillez accepter les conditions d'utilisation";
+    myError7.style.color = "#FF0000"
   } else {
     myError7.textContent = "";
+    myError7.style.color = ""
   }
 
 });
